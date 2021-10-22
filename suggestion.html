@@ -1,0 +1,439 @@
+<!DOCTYPE html>    
+<html lang="en">  
+   
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <title>Product List</title>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+</head>
+<body>
+    <style>
+        @font-face {
+            font-family: 'proxima_nova_rgregular';
+        src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+        src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+        url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+        url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+}
+
+        body {
+            font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+            background-color: #eae8f7
+}
+
+        * {
+            padding: 0;
+        margin-left: 2px;
+        box-sizing: border-box;
+}
+
+        .select2-container--default .select2-results__option--highlighted[aria-selected] {
+            /*background-color: #385072 !important; */
+            background-color: #6242FC!important;
+
+        color: white;
+}
+
+.select2-container--default .select2-results>.select2-results__options {
+            max-height: 250px;
+        height: 250px;
+        top: 0%;
+        top: 0;
+}
+
+        #select2-games-container.select2-selection__rendered {
+            margin-left: 2px;
+        font-size: 12px;
+        box-sizing: border-box;
+}
+
+        #select2-country-container.select2-selection__rendered {
+            margin-left: 2px;
+        font-size: 12px;
+        box-sizing: border-box;
+}
+
+        .select2-selection--multiple {
+            overflow: hidden !important;
+        height: auto !important;
+}
+
+        .select2-choices {
+            min-height: 250px;
+        max-height: 250px;
+        overflow-y: auto;
+}
+
+        h5 {
+            font-family: Tahoma;
+}
+
+        h6 {
+            color: black;
+        font-weight: bold;
+        margin-bottom: 0px;
+        padding-left: 2px;
+}
+
+        .input-field {
+            width: 95%;
+        max-width: 95%;
+        font-size: 12px;
+        padding-left: 10px;
+        margin-left: 3px;
+        border-radius: 2px;
+        border-width: 1px;
+        /* box-shadow: 5px 10px #888888; */
+        /* border: #000000; */
+        border-color: #a1a1a1;
+        display: inline-flexbox;
+        height: 25px;
+}
+
+        .invalid-placeholder {
+            background-color: #fcddcb;
+        columns: white;
+}
+
+        ::-webkit-input-placeholder {
+            /* Edge */
+            color: rgb(8, 8, 8);
+        font-size: 12px;
+}
+
+        :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: rgb(24, 23, 23);
+        font-size: 12px;
+}
+
+        ::placeholder {
+            /*color: rgb(68, 67, 67);*/
+            color: #6242FC;
+        font-size: 12px;
+}
+
+        .center {
+            display: block;
+        margin-left: auto;
+        margin-right: auto
+}
+
+        .select-css {
+            max-width: 70%;
+}
+
+
+        form {
+            width: 300px;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 50px;
+}
+
+        .value-button {
+            display: inline-block;
+        border: 1px solid #ddd;
+        margin: 0px;
+        width: 40px;
+        height: 20px;
+        text-align: center;
+        vertical-align: middle;
+        padding: 11px 0;
+        background: #eee;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+}
+
+        .value-button:hover {
+            cursor: pointer;
+            
+            
+}                        
+         
+        form #decrease {
+            margin-right: -4px;
+        border-radius: 8px 0 0 8px;
+}
+
+        form #increase {
+            margin-left: -4px;
+        border-radius: 0 8px 8px 0;
+}
+
+        form #input-wrap {
+            margin: 0px;
+        padding: 0px;
+}
+
+        input#number {
+            text-align: center;
+        border: none;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        margin: 0px;
+        width: 15%;
+        max-width: 20%;
+        height: 40px;
+}
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        margin: 0;
+}
+        input[type=button]{
+            max-width: 60%;
+            margin: 15px auto;
+            background-color: #ffffff;
+            color: #030303;
+            border-color: #6242FC;
+        }
+         input[type=button]:hover{
+            border: 5px solid #6242FC;
+            color: #6242FC;
+            background-color: white;
+         }
+        .cart-header {
+            display: flex;
+        justify-content: left;
+        position: relative;
+        width: 300px;
+}
+
+        .cart-header h4 {
+            text-align: left;
+        margin-top: 0;
+        padding-top: 0;
+}
+
+        .cart-header input {
+            position: absolute;
+        right: 0;
+        margin-top: 0px;
+}
+
+        .glyphicon {
+            float: right;
+        margin-left: 3px;
+        cursor: pointer;
+}
+
+        .quantity-input {
+            width: 3%;
+        position: absolute;
+        margin-bottom: 2px;
+        height: 20px;
+}
+
+        .demo-wrap {
+            position: relative;
+        height: 100vh;
+}
+
+        .demo-wrap:before {
+            content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+/* background: url("https://cdn.yellowmessenger.com/J8kENYr7XAWL1620791192314.jpg"); */
+/* background-repeat: no-repeat;
+background-position: 50% 0;
+background-size: cover; */
+}
+
+        .demo-content {
+            position: relative;
+}
+
+        #submit-button {
+            margin-top: 10px;
+}
+    </style>
+<!-- <style>    
+* {    
+  box-sizing: border-box;    
+}    
+    
+input[type=text], select, textarea {    
+  width: 100%;    
+  padding: 12px;    
+  border: 1px solid rgb(70, 68, 68);    
+  border-radius: 4px;    
+  resize: vertical;    
+}    
+input[type=email], select, textarea {    
+  width: 100%;    
+  padding: 12px;    
+  border: 1px solid rgb(70, 68, 68);    
+  border-radius: 4px;    
+  resize: vertical;    
+}    
+    
+label {    
+  padding: 12px 12px 12px 0;    
+  display: inline-block;    
+}    
+    
+input[type=submit] {    
+  background-color: rgb(37, 116, 161);    
+  color: white;    
+  padding: 12px 20px;    
+  border: none;    
+  border-radius: 4px;    
+  cursor: pointer;    
+  float: right;    
+}    
+    
+input[type=submit]:hover {    
+  background-color: #45a049;    
+}    
+    
+.container {    
+  border-radius: 5px;    
+  background-color: #f2f2f2;    
+  padding: 20px;    
+}    
+    
+.col-25 {    float: left;    
+  width: 25%;    
+  margin-top: 6px;    
+}    
+    
+.col-75 {    
+  float: left;    
+  width: 75%;    
+  margin-top: 6px;    
+}    
+    
+/* Clear floats after the columns */    
+.row:after {    
+  content: "";    
+  display: table;    
+  clear: both;    
+}    
+    
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */    
+</style>    -->
+<script>
+    var language = "tl"
+        window.addEventListener('load', (event) => {
+                                    console.log('page is fully loaded');
+                                let {lang, status} = Qs.parse(location.search, {ignoreQueryPrefix: true })
+                                language = lang
+                                if (status == "offline") {
+                const message = document.createElement("h6")
+                                message.innerHTML = language == "tl" ? "Mensahe" : "Message"
+                                message.id = "message-header"
+                                document.getElementById("offline-message").appendChild(message)
+                                const messageBox = document.createElement("textarea")
+                                // messageBox.placeholder = language == "tl" ? "message" : "message"
+                                messageBox.type = "text"
+                                messageBox.id = "user-message"
+                                messageBox.name = "message"
+                                // messageBox.onchange = messageHandler()
+                                messageBox.classList.add("input-field")
+                                messageBox.style.height = "50px"
+                                document.getElementById("offline-message").appendChild(messageBox)
+                                // messageBox.setAttribute("oninput", messageHandler());       //uncomment
+                                }
+
+
+                                function back() {
+                                    window.parent.postMessage(
+                                        JSON.stringify({
+                                            event_code: "ym-client-event",
+                                            data: "@go-back"
+                                        }),
+                                        "*"
+                                    );
+        }
+        
+                                function messageHandler() {
+                                    console.log("came into message handler")
+            const message = document.getElementById("user-message")
+                                if (message.value.length == 0) {
+                                    // message.classList.add('invalid-placeholder');
+                                    document.getElementById("invalid-message").innerHTML = language == "tl" ? "Ang isang mensahe ay dapat na ipadala upang kumonekta sa isang ahente" : "A message should be sent to connect to an agent"
+                                }
+                                else {
+                                    // message.classList.remove("invalid-placeholder");
+                                    document.getElementById("invalid-message").innerHTML = ""
+                                }
+        }
+
+        function submit() {
+            const emailRegex = /[A-Za-z\d]+([-._+]?[A-Za-z\d]+)*@[A-Za-z\d]+(-?[A-Za-z\d])*([.][A-Za-z\d]{2,})+/gi
+            if (document.getElementById("user-message")) {
+                                    data.message = document.getElementById("user-message").value
+                                }
+
+                                const message = document.getElementById("user-message")
+                                const submit = document.getElementById("submit-button")
+
+
+                                if(data.message.length == 0 ) {    //Added
+                                        document.getElementById("invalid-message").innerHTML = language == "tl" ? "Ang isang mensahe ay dapat na ipadala upang kumonekta sa isang ahente" : "A message should be sent to connect to an agent"
+                                        message.placeholder = language == "tl" ? 'Ang isang mensahe ay dapat na ipadala upang kumonekta sa isang ahente' : "A message should be sent to connect to an agent"
+                                       // name.classList.add('invalid-placeholder');
+                                       // email.classList.remove("invalid-placeholder");
+                                       // phone.classList.remove("invalid-placeholder")
+                                        message.classList.remove("invalid-placeholder")
+                                        message.focus();
+                                }
+                                console.log("Empty/Invalid values are present in the form ")
+
+                                
+
+
+
+
+
+
+</script> 
+  
+   
+
+<div class="container">    
+  <form>    
+    
+    <div class="row">    
+      <div class="col-25">    
+        <label for="feed_back">We love to hear your feedback and suggestions! 😊
+
+            Please leave your message here:
+            </label>    
+      </div>    
+      <div class="col-75">    
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>    
+      </div>    
+    </div>    
+    <div class="row">    
+      <input type="button" value="Submit" id="submit-button" onclick="submit()" class="btn btn-primary center" />
+    </div>    
+  </form>    
+
+    
+</body>    
+</html>   

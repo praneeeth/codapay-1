@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <style>
+    body {
+      font-family: 'Lato';
+      background-color: #EAE8F7; 
+    }
+
+    h5 {
+      margin: 20px 0px 20px 0px;
+      font-family: 'Lato';
+      font-weight: bold;
+
+    }
+
+
+    .image:hover {
+
+      box-shadow: 50px blue;
+      transform: translateY(4px);
+
+    }
+
+    /* img {
+            vertical-align: middle;
+            max-width: 90px;
+            width: 90px;
+            max-height: 100%;
+            /*margin: 0%;*/
+    /*padding-right: 2px;*/
+    /*}*/
+    /* button {
+            padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            /*height: 10%;*/
+    /*font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+        }*/
+    button:hover {
+      -webkit-box-shadow: 100px 600px 500px #ccc;
+      box-shadow: 2px 6px 5px #ccc;
+      -moz-box-shadow: 100px 600px 100px #ccc;
+      border: 3px solid #385072;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+    }
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+
+    button {
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <script type="text/javascript">
+
+    window.addEventListener('load', (event) => {
+
+      const { title } = Qs.parse(location.search, { ignoreQueryPrefix: true })
+      document.getElementById("heading").innerHTML = title
+    })
+
+    function dana() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How To Make Payment With DANA"
+        }),
+        "*"
+      );
+    }
+    function indosat() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How to make payments with Indomaret"
+        }),
+        "*"
+      );
+    }
+
+
+    function kredivo() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How to make payments with Kredivo"
+        }),
+        "*"
+      );
+    }
+
+    function ovo() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How to make payments with OVO"
+        }),
+        "*"
+      );
+    }
+
+    function telkomsel() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How to make payments with Telkomsel"
+        }),
+        "*"
+      );
+    }
+
+    function gopay() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How To Make Payment With GoPay Balance"
+        }),
+        "*"
+      );
+    }
+
+
+    function shopeepay() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How to make payments with shopeepay"
+        }),
+        "*"
+      );
+    }
+
+    function smartfren() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How to make payments with Smartfren"
+        }),
+        "*"
+      );
+    }
+
+    function indomart() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How to make payments with Indomaret"
+        }),
+        "*"
+      );
+    }
+
+
+
+
+    function truemoney() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How To Make Payment With TrueMoney"
+        }),
+        "*"
+      );
+    }
+
+    function alfamart() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How to make payments with Alfamart"
+        }),
+        "*"
+      );
+
+    }
+
+
+    function doku() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How to Make a Payment With Doku"
+        }),
+        "*"
+      );
+
+    }
+
+    function xlcredit() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How to make payments with XL"
+        }),
+        "*"
+      );
+
+    }
+
+
+
+    function tri() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How to make payments with Tri Credit "
+        }),
+        "*"
+      );
+
+    }
+
+
+    function bcamobile() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How to make payments with BCA mobile"
+        }),
+        "*"
+      );
+
+    }
+
+    function linkaja() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "How to make payments with LinkAja"
+        }),
+        "*"
+      );
+
+    }
+
+
+    function back() {
+      window.parent.postMessage(
+        JSON.stringify({
+          event_code: "ym-client-event",
+          data: "@go-back"
+        }),
+        "*"
+      );
+    }
+  </script>
+  <div class="image">
+    <img src="https://cdn.yellowmessenger.com/KseiGAPc8y401621566579976.jpeg" alt=""
+      style="float: right;width:25px;height:25px;max-width: 40px;max-height: 40px;margin-right: 4px;" onclick="back()">
+  </div>
+  </br>
+  <b>
+    <h5 id="heading">Please choose the payment tutorial below</h5>
+  </b>
+
+
+
+
+
+
+  <button type="button" onclick="dana()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: lato">
+    <img style="vertical-align: middle;
+            max-width: 100px;
+            width: 95px;
+            max-height: 100%;
+            margin-left: auto;
+            display: block;
+            margin-right: auto;
+            /*margin: 0%;*/
+            padding-right: 2px;" src="https://cdn.yellowmessenger.com/PblDFIT7wreu1621319545778.png"
+      alt="Place Holder" />
+  </button>
+
+
+
+  <button type="button" onclick="indosat()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: lato">
+    <img style="vertical-align: middle;
+            max-width: 100px;
+            width: 95px;
+            max-height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            /*margin: 0%;*/
+            padding-right: 2px;" src="https://cdn.yellowmessenger.com/WCF9aSb7oW9A1621344364599.png"
+      alt="Place Holder" />
+  </button>
+
+
+
+
+  <button type="button" onclick="kredivo()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: lato">
+    <img style="vertical-align: middle;
+            max-width: 90px;
+            width: 95px;
+            max-height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            /*margin: 0%;*/
+            padding-right: 2px;" src="https://cdn.yellowmessenger.com/LbhdC5FtN3Io1621343965740.png"
+      alt="Place Holder" />
+  </button>
+
+
+
+  <button type="button" onclick="ovo()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: lato">
+    <img style="vertical-align: middle;
+            max-width: 90px;
+            width: 90px;
+            height: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            /*margin: 0%;*/
+            padding-right: 2px;" src="https://cdn.yellowmessenger.com/4UIDxLbkdNL41621344251257.png"
+      alt="Place Holder" />
+  </button>
+
+  <button type="button" onclick="telkomsel()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: lato">
+    <img style="vertical-align: middle;
+            max-width: 100px;
+            width: 100px;
+            max-height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            /*margin: 0%;*/
+            padding-right: 2px;" src="https://cdn.yellowmessenger.com/16UNlbO1mILT1621345541740.png"
+      alt="Place Holder" />
+  </button>
+
+
+
+  <button type="button" onclick="gopay()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: lato">
+    <img style="vertical-align: middle;
+            max-width: 100px;
+            width: 100px;
+            height: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            /*margin: 0%;*/
+            padding-right: 2px;" src="https://cdn.yellowmessenger.com/Ic5p3nkopxgZ1621345449448.png"
+      alt="Place Holder" />
+  </button>
+
+
+
+  <button type="button" onclick="shopeepay()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: lato">
+    <img style="vertical-align: middle;
+            max-width: 100px;
+            width: 100px;
+            height: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            /*margin: 0%;*/
+            padding-right: 2px;" src="https://cdn.yellowmessenger.com/v3BcY1acr6N41621345674250.png"
+      alt="Place Holder" />
+  </button>
+
+
+
+  <button type="button" onclick="smartfren()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: lato">
+    <img style="vertical-align: middle;
+            max-width: 100px;
+            width: 85px;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            /*margin: 0%;*/
+            padding-right: 2px;" src="https://cdn.yellowmessenger.com/Ss2Nn4QrZiGJ1621401233312.png"
+      alt="Place Holder" />
+  </button>
+
+
+  <button type="button" onclick="indomart()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: lato">
+    <img style="vertical-align: middle;
+            max-width: 100px;
+            width: 95px;
+            max-height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            /*margin: 0%;*/
+            padding-right: 2px;" src="https://cdn.yellowmessenger.com/iyZhPithmt171621346414029.png"
+      alt="Place Holder" />
+  </button>
+
+
+
+
+
+
+
+  <button type="button" onclick="truemoney()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: lato">
+    <img style="vertical-align: middle;
+            max-width: 100px;
+            width: 85px;
+            height: 120%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;            
+
+            /*margin: 0%;*/
+            padding-right: 2px;" src="https://cdn.yellowmessenger.com/WZwjeHOHRQyK1621346631051.png"
+      alt="Place Holder" />
+  </button>
+
+
+
+  <button type="button" onclick="alfamart()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: lato">
+    <img style="vertical-align: middle;
+            max-width: 100px;
+            width: 95px;
+            max-height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+
+            /*margin: 0%;*/
+            padding-right: 2px;" src="https://cdn.yellowmessenger.com/TgtsxpRhOvM81621346866582.png"
+      alt="Place Holder" />
+  </button>
+
+
+
+  <button type="button" onclick="doku()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: lato">
+    <img style="vertical-align: middle;
+            max-width: 100px;
+            width: 100px;
+            height: 80%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            /*margin: 0%;*/
+            padding-right: 2px;" src="https://cdn.yellowmessenger.com/46M3cDauxd5n1621346967457.png"
+      alt="Place Holder" />
+  </button>
+
+  <button type="button" onclick="linkaja()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: 'Lato',sans-serif">
+    <img style="vertical-align: middle;
+            max-width: 90px;
+            width: 45%;
+            height: 70%;
+
+           
+            /*margin: 0%;*/
+            padding-left: 38px;" src="https://cdn.yellowmessenger.com/Fct7HEIjO0dy1621346523464.png"
+      alt="Place Holder" /> LinkAja
+
+  </button>
+
+  <button type="button" onclick="xlcredit()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: 'Lato',sans-serif">
+    <img style="vertical-align: middle;
+            max-width: 90px;
+            width: 45%;
+            height: 70%;
+           
+            /*margin: 0%;*/
+            padding-left: 38px;" src="https://cdn.yellowmessenger.com/qJgW4yOGYWMA1621347294379.png"
+      alt="Place Holder" /> Pulsa XL
+  </button>
+
+
+
+  <button type="button" onclick="tri()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+           font-family: 'Lato',sans-serif">
+    <img style="vertical-align: middle;
+            max-width: 90px;
+            width: 45%;
+            height: 70%;
+            
+            /*margin: 0%;*/
+            padding-left: 38px;" src="https://cdn.yellowmessenger.com/0Lvy28DvZF691621347098389.png"
+      alt="Place Holder" /> Pulsa Tri
+
+  </button>
+
+
+
+  <button type="button" onclick="bcamobile()" class="left primary-btn col-xs-11 text-left" style="padding: 2px;
+            margin: 0.5% 1% 0% 1%;
+            width: 48%;
+            max-width: 48%;
+            height: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid steelblue;
+            -webkit-border-radius: 10px;
+            background-color: white;
+
+           font-family:'Lato',sans-serif">
+    <img style="vertical-align: middle;
+            max-width: 90px;
+            width: 45%;
+            height: 70%;
+         
+            /*margin: 0%;*/
+            padding-left: 38px;" src="https://cdn.yellowmessenger.com/GpSauZ1UhwUS1621347184423.png"
+      alt="Place Holder" /> M-BCA
+
+  </button>
+
+
+
+</body>
+
+</html>
