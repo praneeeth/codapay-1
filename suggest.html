@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<title>Feedback</title>
+<style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            backdrop-filter: blur(5px);
+          
+        }
+
+        .main {
+            width: 300px;
+            min-height: 350px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 15px rgba(0,0,0,0.2);
+            /* background: #eee; */
+            background-color: #eae8f7
+        }
+
+        .btn1 {
+            /* background: rgb(165, 164, 164);
+            border: 1px solid gray;
+            border-radius: 2px; */
+            max-width: 60%;
+            margin: 15px auto;
+            background-color: #ffffff;
+            color: #030303;
+            border-color: #6242FC;
+        }
+    
+        .btn1:hover {
+            /* background: rgb(165, 164, 164);
+            color: white;  */
+            border: 5px solid #6242FC;
+            color: #6242FC;
+            background-color: white;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .main2 {
+            height: 100%;
+        }
+
+        .greeting{
+            text-align: center;
+            font-size: revert;
+            font-weight: 400;
+            display: none;
+        }
+
+        label {
+            /* display: inline-block; */
+            display: inline;
+        }
+        ::placeholder {
+            /*color: rgb(68, 67, 67);*/
+            color: #6242FC;
+       
+}
+    </style>
+</head>
+<body>
+<section class="wrapper container-fluid d-flex justify-content-center align-items-center vh-100">
+<div class="main" style="position: relative;">
+<div class="row w-100 h-100 m-0">
+<!-- <div class="col-lg-12 d-flex justify-content-center bg-white" style="height: 10%;">
+<h6 class="p-2" id="main1" style="font-weight: bold;">Rate your Conversation</h6>
+</div> -->
+<form class="show" action="#" id="form">
+<!-- <div class="col-lg-12 m-0 pt-1" id="emotican">
+<ul class="my-5 p-0" style="width: 100%; display: inline-block; list-style: none; margin: 50px 0 0 0;">
+<table class="m-0" style="width: 100%; border-collapse: inherit;">
+<!-- <tr>
+<!-- <th style="width: 50%;">
+<p style="font-size: 5rem; cursor: pointer;" class="d-flex justify-content-center" onclick="good()">😄</p>
+</th>
+<th style="width: 50%;">
+<p style="font-size: 5rem; cursor: pointer;" class="d-flex justify-content-center" onclick="bad()">😔</p>
+</th> -->
+<!-- </tr> -->
+<!-- <tr style="width: 100%;">
+<td style="width: 50%;">
+<p class="d-flex justify-content-center">GOOD</p>
+</td>
+<td style="width: 50%;">
+<p class="d-flex justify-content-center">BAD</p>
+</td>
+</tr>
+</table> -->
+<!-- </ul> -->
+<!-- </div> --> 
+<!-- <div id="error" class="hide">
+<div class="d-flex  justify-content-center" style="margin-top: 50px;">
+<span><p>Lorem ipsum dolor sit amet.</p></span>
+</div>
+</div> -->
+<div class="row">    
+    <div class="col-25" id = "heading">    
+      <label for="feed_back">We love to hear your feedback and suggestions! 😊<br>
+
+          Please leave your message here:
+          
+          </label>    
+    </div>    
+<div class="show" id="textArea">
+<div class="col-lg-12 d-flex justify-content-center" style="display: none;">
+<textarea id="feedback" placeholder="  Feedback here.." class="w-75" name="text" cols="30" rows="4" style="resize: none; border: 2px solid rgb(25, 23, 26);height:200px"></textarea>
+</div>
+</div>
+<div class="hide" id="dropdown" style="font-size: 14px;">
+<p>Please select your reason:</p>
+<input type="radio" id="F1" name="reason" onclick="triggerText('F1')" value="The agent need to be more helpful">
+<label for="The agent need to be more helpful">The agent need to be more helpful</label><br>
+<input type="radio" id="F2" name="reason" onclick="triggerText('F2')" value="The agent Need to improve the product knowledge">
+<label for="The agent Need to improve the product knowledge">The agent needs to improve the product knowledge</label><br>
+<input type="radio" id="F3" name="reason" onclick="triggerText('F3')" value="Improve the resolution time">
+<label for="Improve the resolution time">Improve the resolution time</label><br>
+<input type="radio" id="F4" name="reason" onclick="triggerText('F4')" value="Improve the reply time">
+<label for="Improve the reply time">Improve the reply time</label><br>
+<input type="radio" id="F5" name="reason" onclick="triggerText('F5')" value="Disagree with the policy">
+<label for="Disagree with the policy">Disagree with the policy</label><br>
+<input type="radio" id="F6" name="reason" onclick="triggerText('F6')" value="Other Feedback">
+<label for="Other Feedback">Other feedback</label><br>
+</div>
+<div></div>
+<div id="submitBtn" >
+<div class="col-lg-12 d-flex justify-content-center my-2">
+<button id="submit" class="btn1 w-75" type="button" onclick="return details()" style="font-weight: bold;">Submit</button>
+</div>
+</div>
+</form>
+
+</div>
+<div class="hide" id="greeting" style="width: 100%; position: absolute; height: 80%;">
+<div class="greeting col-lg-12 d-flex justify-content-center align-items-center" style="height: 100%;">
+<p id="main2" class="">Thank you for the feedback</p>
+</div>
+</div>
+</div>
+</section>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/8bbf807456.js" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+        let feedback;
+        let data = {};
+        let feedback2;
+        let radioFeedback;
+        let textareaValue ;
+
+        var reason = document.getElementsByName("reason");
+        function good() {
+            feedback = 'good';
+            $('#emotican').hide();
+            $("#textArea").show();
+            $("#textArea").css('margin-top', '50px')
+            $('#submitBtn').show();
+            console.error("feedback ----->", feedback );
+
+        }
+
+        function bad() {
+            $('#emotican').hide();
+            $("#textArea").hide();
+            $("#dropdown").show();
+            $('#submitBtn').show();
+            document.getElementById('feedback').focus();
+            feedback = 'bad';
+            console.error( "feedback ----->", feedback);
+        }
+
+        function triggerText(value) {
+            radioFeedback = $('input[name="reason"]:checked').val();
+            console.error('radioFeedback --->',radioFeedback);
+        
+            if(value == 'F6') {
+                $("#error").hide();
+                $("#dropdown").hide();
+                $("#textArea").show();
+                $("#textArea").css('margin-top', '50px')
+                $('#submitBtn').show();
+            }
+        
+        }
+
+
+
+        function details() {
+            submitDetails = document.getElementById('feedback').value;
+            textareaValue = document.getElementById('feedback').value;
+            
+           // if((feedback =='good') && (textareaValue !== '')) {
+                $("#error").hide();
+                $("#textArea").css('margin-top', '50px')
+                data.feedback = feedback;
+                data.radioButtonValue = radioFeedback
+                data.submitDetails = submitDetails;
+           
+                console.log('Submit Details---->>', );
+                var feedbackDetails = {}
+                var raw = JSON.stringify({
+                    "details": {
+                    "companyName": "Codapay",
+                    "feedbackEmoji": feedback,
+                    "radioValue": radioFeedback,
+                    "textareaValue" : textareaValue
+                    }
+                });
+
+                document.getElementById('feedback').value = ''
+                // $("#form").trigger("reset");
+                
+                feedbackDetails.data = raw;
+                window.parent.postMessage(JSON.stringify({
+                    event_code: 'ym-client-event', data: JSON.stringify({
+                        event: {
+                        code: "feedback",
+                        data: feedbackDetails,
+                    
+                        }
+                    })
+                }), '*');
+                $("#submitBtn").hide();
+                $("#textArea").hide();
+                $("#error").hide();
+                $("#heading").hide();
+                $("#greeting").show();
+           // }
+            //  if((feedback =='bad') && (radioFeedback !== 'Other Feedback') && ((reason[0].checked == true) || (reason[1].checked == true) || (reason[2].checked == true) || (reason[3].checked == true)|| (reason[4].checked == true))) {
+            //     $("#error").hide();
+            //     $("#textArea").css('margin-top', '50px')
+            //     data.feedback = feedback;
+            //     data.radioButtonValue = radioFeedback
+            //     data.submitDetails = submitDetails;
+            
+            //     console.log('Submit Details---->>',data);
+            //     var feedbackDetails = {}
+            //     var raw = JSON.stringify({
+            //         "details": {
+            //         "companyName": "ZALORA",
+            //         "feedbackEmoji": feedback,
+            //         "radioValue": radioFeedback,
+            //         "textareaValue" : textareaValue
+            //         }
+            //     });
+
+            //     document.getElementById('feedback').value = ''
+            //     $("#form").trigger("reset");
+                
+            //     feedbackDetails.data = raw;
+            //     window.parent.postMessage(JSON.stringify({
+            //         event_code: 'ym-client-event', data: JSON.stringify({
+            //             event: {
+            //             code: "feedback",
+            //             data: feedbackDetails,
+                    
+            //             }
+            //         })
+            //     }), '*');
+            //     $("#dropdown").hide();
+            //     $('#submitBtn').hide();
+            //     $("#greeting").show();
+
+            // }else if((feedback =='bad') && (radioFeedback == 'Other Feedback') && (textareaValue !== '')) {
+            //     $("#error").hide();
+            //     $("#textArea").css('margin-top', '50px')
+            //     data.feedback = feedback;
+            //     data.radioButtonValue = radioFeedback
+            //     data.submitDetails = submitDetails;
+            
+            //     console.log('Submit Details---->>',data);
+            //     var feedbackDetails =  {}
+            //     var raw = JSON.stringify({
+            //         "details": {
+            //         "companyName": "ZALORA",
+            //         "feedbackEmoji": feedback,
+            //         "radioValue": radioFeedback,
+            //         "textareaValue" : textareaValue
+            //         }
+            //     });
+
+            //     document.getElementById('feedback').value = ''
+            //     $("#form").trigger("reset");
+                
+            //     feedbackDetails.data = raw;
+            //     window.parent.postMessage(JSON.stringify({
+            //         event_code: 'ym-client-event', data: JSON.stringify({
+            //             event: {
+            //             code: "feedback",
+            //             data: feedbackDetails,
+                    
+            //             }
+            //         })
+            //     }), '*');
+            //     $("#submitBtn").hide();
+            //     $("#textArea").hide();
+            //     $("#error").hide();
+            //     $("#greeting").show();
+            // }else if((feedback =='bad') && (radioFeedback !== 'Other Feedback') && ((reason[0].checked == false) || (reason[1].checked == false) || (reason[2].checked == false) || (reason[3].checked == false)|| (reason[4].checked == false)|| (reason[5].checked == false))) {
+            //     $("#error").show();
+            //     $("#error").css('margin-top', '10px')
+            //     $("#error").css('margin-left', '35px')
+            //     $("#error").css('font-size', '14px')
+            //     $("#error").css('margin-bottom', '5px')
+            //     $("#error").css('color', 'red')
+            //     $("#error").text('Please select your Reason...')
+                
+            // }else {
+            //     $("#error").show();
+            //     $("#error").css('margin-top', '50px')
+            //     $("#error").css('font-size', '14px')
+            //     $("#error").css('margin-left', '35px')
+            //     $("#error").css('margin-bottom', '5px')
+            //     $("#error").css('color', 'red')
+            //     $("#textArea").css('margin-top', '0px')                
+            //     $("#error").text('Please provide feedback...')
+            // }
+        }
+
+    </script>
+</body>
+</html>
