@@ -114,9 +114,11 @@
 </div> -->
 <div class="row">    
     <div class="col-25" id = "heading">    
-      <label for="feed_back">Gusto namin marinig ang opinyon mo 😊<br>
+      <label for="feed_back">h6 id = "title">We love to hear your feedback and suggestions! 😊<br>
 
-         Ilagay ang iyong mensahe dito:
+          Please leave your message here:
+          
+          </h6>
 
           
           </label>    
@@ -171,9 +173,11 @@
                                     console.log('page is fully loaded');
                                 let {lang, status} = Qs.parse(location.search, {ignoreQueryPrefix: true })
                                 language = lang
-                                document.getElementById("heading").innerHTML = language == "tl" ? "Gusto namin marinig ang opinyon mo 😊. Ilagay ang iyong mensahe dito": "We love to hear your feedback and suggestions! 😊.Please leave your message here"
-                                 document.getElementById("textArea").innerHTML = language == "tl" ?  "I-type dito" : "Feedback here"
+                                document.getElementById("title").innerHTML = language == "tl" ? "Gusto namin marinig ang opinyon mo 😊. Ilagay ang iyong mensahe dito": "We love to hear your feedback and suggestions! 😊.Please leave your message here"
+                                 document.getElementById("feedback").innerHTML = language == "tl" ?  "I-type dito" : "Feedback here"
                                  document.getElementById("submitBtn").innerHTML = language == "tl" ?  "Ipasa" : "Submit"
+               document.getElementById("main2").innerHTML = language == "tl" ? "Salamat sa iyong feedback! " : "Thank you for the feedback"
+
 
 
           
