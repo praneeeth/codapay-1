@@ -165,6 +165,25 @@
         let feedback2;
         let radioFeedback;
         let textareaValue ;
+       var language = "tl"
+        window.addEventListener('load', (event) => {
+                                    console.log('page is fully loaded');
+                                let {lang, status} = Qs.parse(location.search, {ignoreQueryPrefix: true })
+                                language = lang
+                                document.getElementById("heading").innerHTML = language == "tl" ? "Gusto namin marinig ang opinyon mo 😊. Ilagay ang iyong mensahe dito": "We love to hear your feedback and suggestions! 😊.Please leave your message here"
+                                 document.getElementById("textArea").innerHTML = language == "tl" ?  "I-type dito" : "Feedback here"
+                                 document.getElementById("submitBtn").innerHTML = language == "tl" ?  "Ipasa" : "Submit"
+
+
+          
+
+
+
+
+
+
+
+        });
 
         var reason = document.getElementsByName("reason");
         function good() {
