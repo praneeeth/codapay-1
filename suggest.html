@@ -171,17 +171,12 @@
        var language = "tl"
         window.addEventListener('load', (event) => {
                                     console.log('page is fully loaded');
+                                     console.log('default language',language)
+               
                                 let {lang, status} = Qs.parse(location.search, {ignoreQueryPrefix: true })
+                                console.log('language from bot===>',lang)
                                 language = lang
-               window.parent.postMessage(JSON.stringify({
-                    event_code: 'ym-client-event', data: JSON.stringify({
-                        event: {
-                        code: "feedback",
-                        data: language
-                    
-                        }
-                    })
-                }), '*');
+               
                                 document.getElementById("title").innerHTML = language == "tl" ? "Gusto namin marinig ang opinyon mo 😊. Ilagay ang iyong mensahe dito": "We love to hear your feedback and suggestions! 😊.Please leave your message here"
                                  document.getElementById("feedback").innerHTML = language == "tl" ?  "I-type dito" : "Feedback here"
                                  document.getElementById("submitBtn").innerHTML = language == "tl" ?  "Ipasa" : "Submit"
