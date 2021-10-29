@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+                        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+                        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script> 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <title>Feedback</title>
 <style>
@@ -15,9 +21,19 @@
 
         .wrapper {
             backdrop-filter: blur(5px);
-            background-color: #eae8f7
+            background-color: #800080
           
         }
+
+        button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: #6242FC;
+}
+
+    
 
         .main {
             width: 300px;
@@ -32,7 +48,7 @@
             /* background: rgb(165, 164, 164);
             border: 1px solid gray;
             border-radius: 2px; */
-            max-width: 60%;
+            max-width: 80%;
             margin: 15px auto;
             background-color: #ffffff;
             color: #030303;
@@ -114,14 +130,12 @@
 </div> -->
 <div class="row">    
     <div class="col-25" id = "heading">    
-      <label for="feed_back"><h6 id = "title">We love to hear your feedback and suggestions! 😊<br>
+      <label for="feed_back">
+          <h6 id = "title">We love to hear your feedback and suggestions! 😊<br>
 
           Please leave your message here:
           
-          </h6>
-
-          
-          </label>    
+          </h6></label>    
     </div>    
 <div class="show" id="textArea">
 <div class="col-lg-12 d-flex justify-content-center" style="display: none;">
@@ -146,7 +160,10 @@
 <div></div>
 <div id="submitBtn" >
 <div class="col-lg-12 d-flex justify-content-center my-2">
+    
 <button id="submit" class="btn1 w-75" type="button" onclick="return details()" style="font-weight: bold;">Submit</button>
+
+
 </div>
 </div>
 </form>
@@ -168,21 +185,20 @@
         let feedback2;
         let radioFeedback;
         let textareaValue ;
-       var language = "tl"
+        // translations
+        var language = "tl"
         window.addEventListener('load', (event) => {
                                     console.log('page is fully loaded');
-                                     console.log('default language',language)
-               
+                                    console.log('location==>',location)
+                                    console.log('language',language)
                                 let {lang, status} = Qs.parse(location.search, {ignoreQueryPrefix: true })
-                                console.log('language from bot===>',lang)
                                 language = lang
-               
+                                console.log('language with 2',language,lang)
+                                
                                 document.getElementById("title").innerHTML = language == "tl" ? "Gusto namin marinig ang opinyon mo 😊. Ilagay ang iyong mensahe dito": "We love to hear your feedback and suggestions! 😊.Please leave your message here"
-                                 document.getElementById("feedback").innerHTML = language == "tl" ?  "I-type dito" : "Feedback here"
-                                 document.getElementById("submitBtn").innerHTML = language == "tl" ?  "Ipasa" : "Submit"
-               document.getElementById("main2").innerHTML = language == "tl" ? "Salamat sa iyong feedback! " : "Thank you for the feedback"
-
-
+                                 document.getElementById("feedback").innerHTML = language == "tl" ?  "I-type dito..." : "Feedback here..."
+                                 document.getElementById("submit").innerHTML = language == "tl" ?  "Ipasa" : "Submit"
+                                document.getElementById("main2").innerHTML = language == "tl" ? "Salamat sa iyong feedback! " : "Thank you for the feedback"
 
           
 
@@ -193,7 +209,6 @@
 
 
         });
-
         var reason = document.getElementsByName("reason");
         function good() {
             feedback = 'good';
