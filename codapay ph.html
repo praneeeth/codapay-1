@@ -272,7 +272,7 @@
         }
                             </style>
                             <script>
-                                var language = "id"
+                                var language = "tl"
         window.addEventListener('load', (event) => {
                                     console.log('page is fully loaded');
                                     console.log('location==>',location)
@@ -454,7 +454,9 @@
                                 "payment-type": document.getElementById("country").value,
                                 "games": document.getElementById("games").value,
                                 "phone": document.getElementById("phone").value,
-            }
+                                }
+                                
+                       console.log("data after submit",data)
                                 if (document.getElementById("user-message")) {
                                     data.message = document.getElementById("user-message").value
                                 }
@@ -469,7 +471,7 @@
                             
 
 
-                                if (data["payment-type"] === "null" || data.games === "null" || data.email.length == 0 || data.name.length == 0 || !emailRegex.test(data.email) || data.message.length == 0) {
+                                if (data["payment-type"] === "null" || data.games === "null" || data.email.length == 0 || data.name.length == 0 || !emailRegex.test(data.email) ){
                 if (data.name.length == 0) {
                                     document.getElementById("invalid-message").innerHTML = language == "tl" ? "Kailangan ang pangalan upang kumonekta sa isang ahente!" : "Name is required to connect an agent!"
                     name.placeholder = language == "tl" ? 'Kailangan ang pangalan upang kumonekta sa isang ahente' : "Name is required to connect an agent"
