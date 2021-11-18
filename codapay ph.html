@@ -272,10 +272,13 @@
         }
                             </style>
                             <script>
-                                var language = "tl"
+                                var language = "id"
         window.addEventListener('load', (event) => {
                                     console.log('page is fully loaded');
+                                    console.log('location==>',location)
+                                    console.log('language',language)
                                 let {lang, status} = Qs.parse(location.search, {ignoreQueryPrefix: true })
+                                console.log('language at 2',lang)
                                 language = lang
                                 document.getElementById("title").innerHTML = language == "tl" ? "Pakisagutan ang mga sumusunod para mai-connect ka sa aming Customer Support Team 😊" : "Please fill in the following details to connect you to our Customer Support team 😊"
                                 document.getElementById("name-header").innerHTML = language == "tl" ? "Pangalan" : "Name"
@@ -463,22 +466,7 @@
                                 const message = document.getElementById("user-message")
                                 const submit = document.getElementById("submit-button")
 
-                                // console.log(message.value, "Message value after submitting")
-                                // console.error(data.message, 'message~>')
-                                // if(data.message.length == 0 ) {
-                                //     alert('Alert fill Message Box!!')
-                                //     if (data.message.length == 0) {
-                                //         document.getElementById("invalid-message").innerHTML = language == "tl" ? "Ang isang mensahe ay dapat na ipadala upang kumonekta sa isang ahente" : "A message should be sent to connect to an agent"
-                                //         message.placeholder = language == "tl" ? 'Ang isang mensahe ay dapat na ipadala upang kumonekta sa isang ahente' : "A message should be sent to connect to an agent"
-                                //         name.classList.add('invalid-placeholder');
-                                //         email.classList.remove("invalid-placeholder");
-                                //         phone.classList.remove("invalid-placeholder")
-                                //         message.classList.remove("invalid-placeholder")
-                                //         message.focus();
-                                //         console.error('In Submit Name~~~~~~~~~~~>>')
-                                //     }
-                                // }
-
+                            
 
 
                                 if (data["payment-type"] === "null" || data.games === "null" || data.email.length == 0 || data.name.length == 0 || !emailRegex.test(data.email) || data.message.length == 0) {
@@ -500,7 +488,7 @@
                                 message.classList.remove("invalid-placeholder")
                                 email.focus();
                 }
-                                else if (emailRegex.test(data.email)) {
+                                else if (!emailRegex.test(data.email)) {
                                     document.getElementById("invalid-message").innerHTML = language == "tl" ? "Kinakailangan ang wastong email upang kumonekta sa isang ahente" : "Valid email is required to connect an agent"
                     email.placeholder = language == "tl" ? 'Kinakailangan ang wastong email upang kumonekta sa isang ahente' : "Valid email is required to connect an agent"
                                 name.classList.remove("invalid-placeholder");
